@@ -80,6 +80,5 @@ void testGameEndConditions() {
 
     // バーストしていることを確認
     assertTrue(player.getHand().isBusted());
-}
-
+    }
 }

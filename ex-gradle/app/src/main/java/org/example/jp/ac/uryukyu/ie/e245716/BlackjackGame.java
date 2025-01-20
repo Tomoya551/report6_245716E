@@ -7,8 +7,7 @@ public class BlackjackGame {
     public BlackjackGame() {
         this.deck = new Deck();
         this.player = new Player();
-        this.dealer = new Dealer();
-    }
+        this.dealer = new Dealer();}
     public void start() {
         System.out.println("ゲームを開始します");
         player.getHand().addCard(deck.drawCard());
@@ -22,20 +21,17 @@ public class BlackjackGame {
         while (true) {
             System.out.println("あなたの現在のポイントは " + player.getHand().calculatePoints() + " です。");
             if (!player.decideToDraw()) {
-                break;
-            }
+                break;}
             player.getHand().addCard(deck.drawCard());
             System.out.println("あなたが引いたカードは " + player.getHand().getCards().get(player.getHand().getCards().size() - 1));
             if (player.getHand().isBusted()) {
                 System.out.println("残念、バーストしてしまいました。");
-                return;
-            }
+                return;}
         }
         dealer.play(deck);
         if (dealer.getHand().isBusted()) {
             System.out.println("ディーラーがバーストしました！あなたの勝ちです！");
-            return;
-        }
+            return;}
         int playerPoints = player.getHand().calculatePoints();
         int dealerPoints = dealer.getHand().calculatePoints();
         System.out.println("あなたのポイント: " + playerPoints);
@@ -45,16 +41,12 @@ public class BlackjackGame {
         } else if (playerPoints < dealerPoints) {
             System.out.println("あなたの負けです...");
         } else {
-            System.out.println("引き分けです。");
-        }
+            System.out.println("引き分けです。");}
     }
     public Player getPlayer() {
-        return player;
-    }
+        return player;}
     public Dealer getDealer() {
-        return dealer;
-    }
+        return dealer;}
     public Deck getDeck() {
-        return deck;
-    }
+        return deck;}
 }
