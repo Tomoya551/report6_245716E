@@ -1,11 +1,16 @@
 package main.java.jp.ac.uryukyu.ie.e245716;
 
 public class BlackjackGame {
-    public static void main(String[] args) {
+    private Deck deck;
+    private Player player;
+    private Dealer dealer;
+    public BlackjackGame() {
+        this.deck = new Deck();
+        this.player = new Player();
+        this.dealer = new Dealer();
+    }
+    public void start() {
         System.out.println("ゲームを開始します");
-        Deck deck = new Deck();
-        Player player = new Player();
-        Dealer dealer = new Dealer();
         player.getHand().addCard(deck.drawCard());
         dealer.getHand().addCard(deck.drawCard());
         player.getHand().addCard(deck.drawCard());
